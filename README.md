@@ -3,6 +3,9 @@ Chaincomics
 
 Draw small comics with other people by email.
 
+Note that at the moment the app is really 'hackety' as I have to finish it
+for school... Looks and fail-save code are not a priority ATM.
+
 Installation
 ------------
 
