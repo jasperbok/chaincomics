@@ -1,5 +1,5 @@
-var email = require('emailjs')
-  , crypto = require('crypto'),
+var email = require('emailjs'),
+    crypto = require('crypto'),
     connection = require('./lib/mysql-connection').connection,
     settings = require('./settings').settings;
 
@@ -35,12 +35,13 @@ connection.query('SELECT * FROM `users` WHERE `status` = ?', ['LOOK'], function(
           var token = crypto.createHash('md5').update((comicID + '') + (order + '') + (userIDs[k] + '')).digest('hex');
           order++;
 
-          if (order === 0) {
+          if (order === 1) {
             sendDrawMail(users[k].username, users[k].email, token, true);
           }
 
           connection.query('INSERT INTO `panels` (`user_id`, `comic_id`, `order`, `finished`, `edit_token`) VALUES (?, ?, ?, 0, ?)', [userIDs[k], comicID, order, token], function(err, result) {
             if (err) throw err;
+
             console.log(result.insertId);
           });
         }
@@ -51,7 +52,7 @@ connection.query('SELECT * FROM `users` WHERE `status` = ?', ['LOOK'], function(
 
 function sendDrawMail(name, email, token, first) {
   server.send({
-    text: 'Hoi, ' + name + 'het is jouw beurt om te tekenen. Klik op deze link. http://localhost:3000/draw/' + token,
+    text: 'Hoi, ' + name + ' je moet het eerste plaatje van een nieuwe strip tekenen. Klik op deze link. http://strips.jasperbok.nl/draw/' + token,
     from: 'Chain Comics <chaincomics@gmail.com>',
     to: email,
     subject: 'Het is jouw beurt om te tekenen'

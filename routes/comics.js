@@ -113,7 +113,7 @@ function sendComicEndMail(users, host, comicID) {
   toUsers = toUsers.slice(0, toUsers.length - 2);
 
   var message = {
-    text: "Je hebt samen met andere gebruikers een strip afgerond.\n\nJe kan de strip bekijken op de volgende URL: http://" + host + "/comic/" + comicID,
+    text: "Je hebt samen met andere gebruikers een strip afgerond.\n\nJe kan de strip bekijken op de volgende URL: http://" + host + "/comic/" + comicID +"\n\nVul alsjeblieft ook de volgende vragenlijst in zodat ik mijn concept kan verbeteren: http://docs.google.com/spreadsheet/viewform?formkey=dEx6WEJPU29sR1ktTTVwRmlVaGV5YUE6MQ",
     from: "Chain Comics <chaincomics@gmail.com>",
     to: toUsers,
     subject: "Er is een strip afgerond"
