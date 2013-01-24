@@ -1,0 +1,11 @@
+<% include head %>
+
+<h1>Strippaneel</h1>
+
+<% if (!error) { %>
+  <img src="<%- imageData %>" width="620" height="460" alt="Strippaneel" title="Strippaneel" />
+<% } else { %>
+  <p>Er bestaat geen paneel met het opgegeven token.</p>
+<% } %>
+
+<% include foot %>

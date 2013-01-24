@@ -1,0 +1,85 @@
+@white: #FFF;
+@light-gray: #DDD;
+@medium-gray: #A9A9A9;
+@dark-gray: #222;
+@black: #000;
+
+@color-1: #F33;
+
+@import "font-awesome";
+
+html, body, #wrap {
+  background: @color-1;
+  color: @white;
+  font: 14px sans-serif;
+  height: 100%;
+}
+
+header {
+  height: 10%;
+  text-align: center;
+
+  h1 {
+    font-size: 18px;
+    font-style: italic;
+    padding-top: 20px;
+  }
+}
+
+button.direction {
+  border: 2px solid @dark-gray;
+  border-radius: 125px;
+  color: @dark-gray;
+  position: fixed;
+  height: 100px;
+  width: 100px;
+}
+
+#left-button {
+  bottom: 100px;
+  right: 120px;
+}
+
+#right-button {
+  bottom: 100px;
+  right: 10px;
+}
+
+#up-button {
+  left: 10px;
+  bottom: 210px;
+}
+
+#down-button {
+  left: 10px;
+  bottom: 100px;
+}
+
+#screen {
+  background: @light-gray;
+  border: 2px solid @dark-gray;
+  border-radius: 5px;
+  color: @dark-gray;
+  margin: 0 auto;
+  width: 620px;
+  height: 460px;
+
+  h1 {
+    padding: 12px;
+    text-align: center;
+  }
+
+  p {
+    padding: 12px;
+    text-align: center;
+  }
+}
+
+footer {
+  background: @color-1;
+  bottom: 0px;
+  height: 10%;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}

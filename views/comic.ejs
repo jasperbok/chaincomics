@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comic</title>
+  <style>
+    img {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <% if (typeof imageData != 'undefined') { %>
+    <% for (var i = 0; i < imageData.length; i++) { %>
+      <img src="<%- imageData[i].data %>" />
+    <% } %>
+  <% } %>
+</body>
+</html>
