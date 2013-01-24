@@ -2,12 +2,13 @@ var express = require('express'),
     routes = require('./routes'),
     comicRoutes = require('./routes/comics'),
     http = require('http'),
+    settings = require('./settings').settings,
     path = require('path');
 
 var app = express();
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 25205);
+  app.set('port', process.env.PORT || settings.app.port);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
   app.use(express.favicon());
