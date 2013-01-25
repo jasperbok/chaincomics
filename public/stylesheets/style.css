@@ -1054,6 +1054,9 @@ header h1 {
   font-style: italic;
   padding-top: 20px;
 }
+header p {
+  font-size: 12px;
+}
 form {
   position: fixed;
   bottom: 20px;
