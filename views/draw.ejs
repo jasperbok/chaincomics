@@ -2,20 +2,21 @@
 
 <canvas id="drawing-canvas" height="460" width="620"></canvas>
 
-</div>
+<% if (typeof token != 'undefined') { %>
+<div>
   <form action="/submit" method="post">
     <input id="token" name="token" type="hidden" value="<%- token %>" />
     <input id="base64" name="base64" type="hidden" value="" />
     <button id="drawing-submit-btn" type="submit" disabled>Klaar!</button>
   </form>
 </div>
+<% } %>
 
 <script type="text/javascript" src="/javascripts/jquery-1.9.0.min.js"></script>
-<script type="text/javascript" src="/javascripts/jquery.mobile.custom.min.js"></script>
-<script type="text/javascript" src="/javascripts/draw.js"></script>
+<script type="text/javascript" src="/javascripts/sketch.min.js"></script>
 <script type="text/javascript" src="/javascripts/draw-form-handle.js"></script>
 <script type="text/javascript">
-  $().etchASketchCanvas();
+  $('#drawing-canvas').sketch({defaultSize: 3});
 </script>
 
 <% include foot %>

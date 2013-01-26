@@ -32,7 +32,7 @@ exports.draw = function(req, res) {
     if (err) throw err;
 
     if (rows.length === 0) {
-      res.render('dummy-draw', {});
+      res.render('draw', {});
     } else if (rows.length === 1) {
       res.render('draw', {token: rows[0].edit_token});
     } else {
